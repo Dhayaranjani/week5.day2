@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<!-- . Dynamic data parametrization
+     *Apply  for all the leaftaps testcases , wherever applicable
+    - Create new excel document for the testcases that require the multiple data to operate on.
+    - Implement the Data parametrization for all the required testcases through the DataProvider class to read the data from the excel sheet
+ -->
+<suite parallel="classes" name="Suite">
+<parameter name="url" value="http://leaftaps.com/opentaps/control/main"></parameter>
+<parameter name="username" value="DemoSalesManager"></parameter>
+<parameter name="password" value="crmsfa"></parameter>
+  <test thread-count="2" parallel="classes" name="Test" verbose="5">
+    <classes>
+      <class name="week5.day2.EditLead"/>
+      <class name="week5.day2.CreateLead"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
